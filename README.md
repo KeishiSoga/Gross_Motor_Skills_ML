@@ -13,9 +13,9 @@ https://nanzan-u.repo.nii.ac.jp/records/2001614
 - 詳細な可視化機能（残差プロット、特徴量重要度など）
 - 日本語対応のグラフ表示
 
-## 必要な環境
-- Python 3.7+
-- 必要なライブラリは `requirements.txt` を参照
+## 開発環境
+- Python 3.12.0
+
 
 ## 依存関係
 ```
