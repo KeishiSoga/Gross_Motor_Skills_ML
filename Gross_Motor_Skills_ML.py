@@ -1,7 +1,6 @@
 Pythonコード
 
 # ライブラリのインポート
-%matplotlib inline
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -43,7 +42,7 @@ df_2=df[[ 'sex',
          'leisure_time_p3', 
          'bro_sis',
          'sporthistory',
-         'fa_abi'
+         'fa_abi',
          'mo_abi', 
        'sportkind_1yr', 
         'first_sportkind',
@@ -132,11 +131,11 @@ optuna.__version__
 
 # 固定値のハイパーパラメータ
 params_base = {
-    'objective': 'mae'
+    'objective': 'mae',
     'random_seed': 1234,
     'learning_rate': 0.01,
     'min_data_in_bin': 3,
-    'bagging_freq': 1
+    'bagging_freq': 1,
     'bagging_seed': 0,
     'verbose': -1,
 }
@@ -158,9 +157,7 @@ def objective(trial):
   }
 
   
-
-  # 探索用ハイパーパラメータの設定
-
+    # 探索用ハイパーパラメータの設定
     params_tuning.update(params_base)
     lgb_train = lgb.Dataset(X_tr, y_tr)
     lgb_eval = lgb.Dataset(X_va, y_va)
@@ -366,6 +363,3 @@ feature_importances = feature_importances.sort_values(by='Importance', ascending
 
 # 数値として出力
 print(feature_importances)
-
-
-
